@@ -1,1 +1,1 @@
-Hello, World
+### Day One of C! Hello, World
