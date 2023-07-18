@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
   * main - A program that prints _putchar, followed by a new line.
@@ -12,7 +12,7 @@ int main(void)
 	while (*main)
 	{
 		_putchar(*main);
-		main++
+		main++;
 	}
 	_putchar('\n');
 	return (0);
