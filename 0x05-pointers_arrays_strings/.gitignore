@@ -7,3 +7,4 @@ _putchar.c
 4-print_rev
 5-rev_string
 6-puts2
+7-puts_half
