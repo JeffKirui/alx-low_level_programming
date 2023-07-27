@@ -5,24 +5,23 @@
   * @s: string
   * Return: encode string `s`
   */
-char *leet(char *str)
+char *leet(char *s)
 {
-	char c[] = "aeotlAEOTL";
-	char n[] = "4307143071";
-	int i = 0;
-	int j;
+	int i;
 
-	while (*(str + i) != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j <= 9; j++)
-		{
-			if (*(str + i) == c[j])
-			{
-				*(str + i) = n[j];
-			}
-		}
-		i++;
+		while (s[i] == 'a' || s[i] == 'A')
+			s[i] = '4';
+		while (s[i] == 'e' || s[i] == 'E')
+			s[i] = '3';
+		while (s[i] == 'o' || s[i] == 'O')
+			s[i] = '0';
+		while (s[i] == 't' || s[i] == 'T')
+			s[i] = '7';
+		while (s[i] == 'l' || s[i] == 'L')
+			s[i] = '1';
 	}
 
-	return (str);
+	return (s);
 }
