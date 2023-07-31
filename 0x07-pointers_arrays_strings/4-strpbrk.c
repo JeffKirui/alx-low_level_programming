@@ -1,12 +1,11 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
   * _strpbrk - Search a string for any set of bytes
   * @s: string
   * @accept: string to match
-  * Retrun: Pointer to the byte in `s` tha t matches one of the bytes in `accept`
-  * or NULL if no such byte is found.
+  * Return: Pointer to the byte in `s` tha t matches one of the bytes in
+  * `accept` or NULL if no such byte is found.
   */
 char *_strpbrk(char *s, char *accept)
 {
@@ -21,5 +20,5 @@ char *_strpbrk(char *s, char *accept)
 		}
 		s++;
 	}
-	return (NULL);
+	return ('\0');
 }
