@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -9,17 +10,16 @@
   */
 char *_strpbrk(char *s, char *accept)
 {
-		int k;
+	int i;
 
-		while (*s)
+	while (*s)
+	{
+		for (i = 0; accept[i]; i++)
 		{
-			for (k = 0; accept[k]; k++)
-			{
-			if (*s == accept[k])
-			return (s);
-			}
-		s++;
+			if (*s == accept[i])
+				return (s);
 		}
-
-	return ('\0');
+		s++;
+	}
+	return (NULL);
 }
