@@ -8,6 +8,7 @@ void print_binary(unsigned long int n)
 {
 	int count = 0;
 	unsigned long int cpy;
+
 	cpy = n;
 
 	while (cpy > 0)
