@@ -1,11 +1,10 @@
 #ifndef MAIN_HEADER_H
 #define MAIN_HEADER_H
+#define BUFF_SIZE 1204
 
-/*Libraries*/
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-/*New Discoveries*/
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
