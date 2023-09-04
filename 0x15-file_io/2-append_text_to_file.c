@@ -10,23 +10,40 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, wf, len;
+	int file, wf, cf, i;
 
+	/* Check if the pointer is NULL */
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content !=  NULL)
-	{
-		for (len = 0; text_content[len];)
-			len++;
-	}
+	/* Open the file and save the return in the file description */
+	file = open(filename, O_APPEND | O_WRONLY);
 
-	file = open(filename, O_WRONLY | O_APPEND);
-	wf = write(file, text_content, len);
-
-	if (wf == -1 || file == -1)
+	/* Check if the file was opened successfully */
+	if (file == -1)
 		return (-1);
 
-	close(file);
+	/* Check if txt_content is not null,and loop over the content */
+	if (text_content != NULL)
+	{
+		/* for loop to get the length */
+		for (len = 0; text_content[i] != '\0'; i++)
+			continue;
+
+		/* write the text_content inside the new file created */
+		wf = write(file, text_content, i);
+	}
+
+	/* Check if the file was written successfully */
+	if (wf == -1)
+		return (-1);
+
+	/* Close the file when finished*/
+	cf = close(file);
+
+	/* Check if the file was closed successfully */
+	if (cf == -1)
+		return (-1);
+
 	return (1);
 }
