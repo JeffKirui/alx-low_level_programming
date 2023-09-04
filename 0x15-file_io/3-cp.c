@@ -66,22 +66,17 @@ int main(int argc, char *argv[])
 
 	check_args(argv[1], argv[2]);
 	f_from = open(argv[1], O_RDONLY);
-
 	if (f_from == -1)
 		read_error(argv[1]);
 	f_to = open(argv[2], O_CREAT | O_RDONLY | O_WRONLY | O_TRUNC, mode);
-
 	if (f_to == -1)
 		write_error(argv[2]);
 	buffer = malloc(sizeof(char) * BUFF_SIZE);
-
 	if (buffer == NULL)
 		return (1);
 	f_read = read(f_from, buffer, BUFF_SIZE);
-
 	if (f_read == -1)
 		read_error(argv[1]);
-
 	while (f_read > 0)
 	{
 		f_write = write(f_to, buffer, f_read);
@@ -92,11 +87,9 @@ int main(int argc, char *argv[])
 			read_error(argv[1]);
 	}
 	f_fclose = close(f_from);
-
 	if (f_fclose == -1)
 		close_error(f_fclose);
 	f_close = close(f_to);
-
 	if (f_close == -1)
 		close_error(f_close);
 	free(buffer);
