@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * read_error - function that prints read error, and exits if there's an 
+ * read_error - function that prints read error, and exits if there's an
  * error reading from file.
  * @file: file pointer
  */
 void read_error(char *file)
-{	
+{
 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 	exit(98);
 }
@@ -17,7 +17,7 @@ void read_error(char *file)
  * @file: file pointer
  */
 void write_error(char *file)
-{	
+{
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 	exit(99);
 }
@@ -28,7 +28,7 @@ void write_error(char *file)
  * @file: value of file descriptor
  */
 void close_error(int file)
-{	
+{
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
 	exit(100);
 }
