@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
-  * print_binary - function that prints the binary representation of a number
+  * print_binary - prints the binary representation of a number
   * @n: the number to convert
   */
 void print_binary(unsigned long int n)
 {
 	int count = 0;
-	unsigned long int cpy;
+	unsigned long int cy;
 
-	cpy = n;
+	cy = n;
 
-	while (cpy > 0)
+	while (cy > 0)
 	{
-		cpy >>= 1;
+		cy >>= 1;
 		count++;
 	}
 	if (count != 0)
